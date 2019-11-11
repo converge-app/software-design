@@ -1,0 +1,94 @@
+@startuml
+
+ skinparam monochrome true
+ skinparam classAttributeIconSize 0
+ top to bottom direction
+package "message.models"{
+  
+  interface "IMessage" {
+    + id :string
+    + senderId :string
+    + receiverId :string
+    + contactId :string
+    + timestamp :number
+  }
+  hide IMessage  methods
+
+  
+
+class "Chat" {
+  <<property>>
+   + id :string
+    + senderId :string
+    + receiverId :string
+    + contactId :string
+    + timestamp :number
+}
+hide Chat circle
+
+class "MessageInputs" {
+  + sendEvent()
+  <<property>>
+    + id :string
+    + senderId :string
+    + receiverId :string
+    + contactId :string
+    + timestamp :number
+}
+hide MessageInputs circle
+
+  
+class "ReceivingMessage" {
+  <<property>>
+    + id :string
+    + senderId :string
+    + receiverId :string
+    + contactId :string
+    + timestamp :number
+}
+hide ReceivingMessage circle
+  
+  
+class "SentMessage" {
+  <<property>>
+    + id :string
+    + senderId :string
+    + receiverId :string
+    + contactId :string
+    + timestamp :number
+}
+hide SentMessage circle
+  
+class "MessageActions" {
+  + sendMessage() :IMessage
+  + getMessages() :string
+  <<property>>
+    + id :string
+    + senderId :string
+    + receiverId :string
+    + contactId :string
+    + timestamp :number
+}
+
+class "MessageService" {
+  + post() :IMessage
+  + get() :string
+  <<property>>
+    + id :string
+    + senderId :string
+    + receiverId :string
+    + contactId :string
+    + timestamp :number
+}
+  
+  IMessage <|.. MessageInputs 
+  IMessage <|.. Chat
+   IMessage <|.. ReceivingMessage
+   IMessage <|.. SentMessage
+  IMessage <|.. MessageActions
+  IMessage <|.. MessageService
+
+}
+
+
+@enduml

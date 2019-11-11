@@ -1,0 +1,72 @@
+@startuml
+
+ skinparam monochrome true
+ skinparam classAttributeIconSize 0
+ top to bottom direction
+package "contact.models"{
+  
+  interface "IContact" {
+    + id :string
+    + senderId :string
+    + receiverId :string
+    + contactId :string
+  }
+  hide IContact  methods
+
+  
+  
+  
+  class "ChatContent" {
+  <<property>>
+    + id :string
+    + senderId :string
+    + receiverId :string
+    + contactId :string
+}
+
+hide ChatContent circle
+show ChatContent fields
+
+class "Chat" {
+  <<property>>
+    + id :string
+    + senderId :string
+    + receiverId :string
+    + contactId :string
+}
+
+hide Chat circle
+show Chat fields
+  
+  class "Contact" {
+  <<property>>
+    + id :string
+    + senderId :string
+    + receiverId :string
+    + contactId :string
+}
+
+hide Contact circle
+show Contact fields
+  
+  
+class "ContactActions" {
+  + getContacts() :string
+  + addContact() :string
+  + setCurrentContact() :string
+  <<property>>
+    + id :string
+    + senderId :string
+    + receiverId :string
+    + contactId :string
+}
+  
+  IContact <|.. ChatContent 
+  IContact <|.. Chat
+   IContact <|.. Contact
+   IContact <|.. ContactActions
+
+}
+
+
+@enduml

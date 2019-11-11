@@ -1,0 +1,26 @@
+Redux architecture
+
+@startuml
+skinparam rectangle {
+	roundCorner 25
+
+}
+ skinparam monochrome true
+ left to right direction
+
+package "Redux architecture"{
+rectangle "Action" as action
+rectangle "Reducer" as reducer
+rectangle "Store" as store
+rectangle "View" as view
+
+action --> store: Action 
+store --> reducer: PreviousState, Action
+reducer --> store: New State
+store --> view: State
+view -right-> action
+  }
+
+store -[hidden]- action
+
+@enduml

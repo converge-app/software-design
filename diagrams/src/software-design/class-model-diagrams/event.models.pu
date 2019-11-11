@@ -1,0 +1,123 @@
+@startuml
+
+ skinparam monochrome true
+ skinparam classAttributeIconSize 0
+ top to bottom direction
+package "class event.models"{
+  
+  interface "IEvent" {
+  + id :string
+  + projectId :string
+  + ownerId :string
+  + type :string
+  + content :string
+  + timestamp? :number
+  }
+  hide IEvent  methods
+
+  class "CollaborationContent"{  
+  <<property>>
+   + id :string
+  + projectId :string
+  + ownerId :string
+  + type :string
+  + content :string
+  + timestamp? :number
+  }
+  
+hide CollaborationContent circle
+show CollaborationContent fields
+  
+  
+class "EventFile" {
+  + getUser() :string
+  + useEffect()
+  <<property>>
+     + id :string
+  + projectId :string
+  + ownerId :string
+  + type :string
+  + content :string
+  + timestamp? :number
+}
+
+hide EventFile circle
+
+class "EventMessage" {
+  + getUser() :string
+  + useEffect()
+  <<property>>
+    + id :string
+  + projectId :string
+  + ownerId :string
+  + type :string
+  + content :string
+  + timestamp? :number
+}
+
+hide EventMessage circle
+
+class "EventType" {
+  <<property>>
+  + id :string
+  + projectId :string
+  + ownerId :string
+  + type :string
+  + content :string
+  + timestamp? :number
+}
+
+hide EventType circle
+  
+  class "CollaborationActions" {
+    + send()
+    + getByProjectId() :string
+  <<property>>
+  + id :string
+  + projectId :string
+  + ownerId :string
+  + type :string
+  + content :string
+  + timestamp? :number
+}
+
+  
+class "CollaborationPage" {
+    + send()
+    + getByProjectId() :string
+  <<property>>
+  + id :string
+  + projectId :string
+  + ownerId :string
+  + type :string
+  + content :string
+  + timestamp? :number
+}
+
+hide CollaborationPage circle
+  
+  
+class "CollaborationService" {
+    + create()
+    + getByProjectId() :string
+  <<property>>
+  + id :string
+  + projectId :string
+  + ownerId :string
+  + type :string
+  + content :string
+  + timestamp? :number
+}
+  
+   IEvent <|.. CollaborationContent 
+  IEvent <|.. EventFile
+  IEvent <|.. EventMessage 
+  IEvent <|.. EventType
+  IEvent <|.. CollaborationActions 
+  IEvent <|.. CollaborationPage
+    IEvent <|.. CollaborationService
+
+}
+
+
+@enduml

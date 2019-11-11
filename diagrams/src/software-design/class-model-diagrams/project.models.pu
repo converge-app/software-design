@@ -1,0 +1,215 @@
+@startuml
+
+ skinparam monochrome true
+ skinparam classAttributeIconSize 0
+ top to bottom direction
+package "project.models"{
+  
+  interface "IProject" {
+   + id :string
+   + ownerId :string
+   + freelancerId :string
+   + projectContent:[ 
+       + title :string
+       + description :string
+       + category :string
+       + subCategory :string
+       + amount :number
+       + files :string[]
+    ]
+  }
+  hide IProject  methods
+
+  
+
+class "FindOpenProjectsContent" {
+  <<property>>
+    + id :string
+   + ownerId :string
+   + freelancerId :string
+   + projectContent:[ 
+       + title :string
+       + description :string
+       + category :string
+       + subCategory :string
+       + amount :number
+       + files :string[]
+    ]
+}
+hide FindOpenProjectsContent circle
+
+class "MyProjectsContent" {
+  + useEffect()
+  <<property>>
+   + id :string
+   + ownerId :string
+   + freelancerId :string
+   + projectContent:[ 
+       + title :string
+       + description :string
+       + category :string
+       + subCategory :string
+       + amount :number
+       + files :string[]
+    ]
+}
+hide MyProjectsContent circle
+
+class "OpenProjectContent" {
+  <<property>>
+    + id :string
+   + ownerId :string
+   + freelancerId :string
+   + projectContent:[ 
+       + title :string
+       + description :string
+       + category :string
+       + subCategory :string
+       + amount :number
+       + files :string[]
+    ]
+}
+hide OpenProjectContent circle
+  
+class "ProjectActions" {
+  + getByUserId() :string
+  + createProject() :IProject
+  + get()
+  + getOpen()
+  + getById() :string
+  <<property>>
+  + id :string
+   + ownerId :string
+   + freelancerId :string
+   + projectContent:[ 
+       + title :string
+       + description :string
+       + category :string
+       + subCategory :string
+       + amount :number
+       + files :string[]
+    ]
+}
+
+class "CollaborationPage" {
+  <<property>>
+    + id :string
+   + ownerId :string
+   + freelancerId :string
+   + projectContent:[ 
+       + title :string
+       + description :string
+       + category :string
+       + subCategory :string
+       + amount :number
+       + files :string[]
+    ]
+}
+hide CollaborationPage circle
+
+  
+class "CreateProjectPage" {
+  <<property>>
+     + id :string
+   + ownerId :string
+   + freelancerId :string
+   + projectContent:[ 
+       + title :string
+       + description :string
+       + category :string
+       + subCategory :string
+       + amount :number
+       + files :string[]
+    ]
+}
+hide CreateProjectPage circle
+  
+class "ProjectsPage" {
+  + useEffect()
+  <<property>>
+      + id :string
+   + ownerId :string
+   + freelancerId :string
+   + projectContent:[ 
+       + title :string
+       + description :string
+       + category :string
+       + subCategory :string
+       + amount :number
+       + files :string[]
+    ]
+}
+hide ProjectsPage circle
+
+class "ProjectPage" {
+  + useEffect()
+  <<property>>
+  + id :string
+   + ownerId :string
+   + freelancerId :string
+   + projectContent:[ 
+       + title :string
+       + description :string
+       + category :string
+       + subCategory :string
+       + amount :number
+       + files :string[]
+    ]
+}
+hide ProjectPage circle  
+  
+
+class "OpenProjectsPage" {
+  + useEffect()
+  <<property>>
+     + id :string
+   + ownerId :string
+   + freelancerId :string
+   + projectContent:[ 
+       + title :string
+       + description :string
+       + category :string
+       + subCategory :string
+       + amount :number
+       + files :string[]
+    ]
+}
+hide OpenProjectsPage circle  
+  
+class "ProjectService" {
+  + getByUserId() :string
+  + createProject() :IProject
+  + get()
+  + getOpen()
+  + getById() :string
+  <<property>>
+   + id :string
+   + ownerId :string
+   + freelancerId :string
+   + projectContent:[ 
+       + title :string
+       + description :string
+       + category :string
+       + subCategory :string
+       + amount :number
+       + files :string[]
+    ]
+}
+
+
+  IProject <|.. FindOpenProjectsContent
+  IProject <|.. MyProjectsContent 
+  IProject <|.. OpenProjectContent
+  IProject <|.. CollaborationPage 
+  IProject <|.. CreateProjectPage 
+  IProject <|.. ProjectsPage
+  IProject <|.. ProjectPage 
+  IProject <|.. OpenProjectsPage
+  IProject <|.. ProjectService 
+  IProject <|.. ProjectActions
+  
+  
+}
+
+
+@enduml

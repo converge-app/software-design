@@ -4,6 +4,7 @@ skinparam rectangle {
 	roundCorner 25
   
 }
+skinparam monochrome true
 package "Converge workflows" {
 rectangle "Higher order React component" as Converge {
 	rectangle "User interface \n React component" as sa 

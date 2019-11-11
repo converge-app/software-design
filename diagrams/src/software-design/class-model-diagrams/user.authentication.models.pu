@@ -1,0 +1,34 @@
+@startuml
+
+ skinparam monochrome true
+ skinparam classAttributeIconSize 0
+ top to bottom direction
+package "user.authentication.models"{
+  
+  interface "IUserAuthentication" {
+    + id :string
+    + token :string
+    + email :string
+    
+  }
+  hide IUserAuthentication  methods
+
+class "AuthenticationService" {
+  + login(email: string, password: string)
+  + signUp(  email: string, password: string, firstName: string, lastName: string)
+  + logout()
+  + isLoggedIn() :boolean
+  + getToken() :string
+  + getId() :string
+  <<property>>
+    + id :string
+    + token :string
+    + email :string
+}
+
+  IUserAuthentication <|.. AuthenticationService
+  
+}
+
+
+@enduml

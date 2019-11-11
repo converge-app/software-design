@@ -1,0 +1,46 @@
+@startuml
+
+ skinparam monochrome true
+ skinparam classAttributeIconSize 0
+ top to bottom direction
+package "category.models"{
+  
+  interface "ICategory" {
+    + label :string
+    + value : string
+    + subCategories :ISubCategory[ ]
+    
+  }
+  hide ICategory  methods
+
+  class "CreateProjectCategory" {
+	+ CreateProjectCategory()
+  <<property>>
+    + label :string
+    + value : string
+    + subCategories :ISubCategory[ ]
+}
+
+hide CreateProjectCategory circle
+show CreateProjectCategory fields
+
+  class "CategoryService" {
+	+ getAll()
+  + getAllSorted()
+  + getSubCategories() :string
+  + getSubCategoriesSorted() :string
+  + getCapilatized() :string
+  + getByCategoryAndString()
+  <<property>>
+  + label :string
+  + value : string
+  + subCategories :ISubCategory[ ]
+}
+  
+  ICategory <|.. CreateProjectCategory 
+  ICategory <|.. CategoryService
+
+}
+
+
+@enduml
