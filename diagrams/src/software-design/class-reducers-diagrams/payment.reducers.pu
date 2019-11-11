@@ -1,0 +1,15 @@
+@startuml
+
+ skinparam monochrome true
+ skinparam classAttributeIconSize 0
+ top to bottom direction
+package "class payment.reducers"{
+  
+class "Payment" {
+  + accountExists(state, action)
+}
+  
+}
+
+
+@enduml

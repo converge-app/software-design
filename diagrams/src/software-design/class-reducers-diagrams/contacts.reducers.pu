@@ -1,0 +1,17 @@
+@startuml
+
+ skinparam monochrome true
+ skinparam classAttributeIconSize 0
+ top to bottom direction
+package "class contacts.reducers"{
+  
+class "Contacts" {
+  + getContacts(state, action)
+  + addContact(state, action)
+  + setCurrentContact(state, action)
+}
+  
+}
+
+
+@enduml

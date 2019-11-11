@@ -1,0 +1,17 @@
+@startuml
+
+ skinparam monochrome true
+ skinparam classAttributeIconSize 0
+ top to bottom direction
+package "class message.reducers"{
+  
+  
+class "Message" {
+  + getMessages(state, action)
+  + sendMessage(state, action)
+}
+  
+}
+
+
+@enduml

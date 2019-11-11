@@ -1,0 +1,17 @@
+@startuml
+
+ skinparam monochrome true
+ skinparam classAttributeIconSize 0
+ top to bottom direction
+package "class collaboration.reducers"{
+  
+
+class "Collaboration" {
+  + getByProjectId(state, action)
+  + createEvent(state, action)
+}
+  
+}
+
+
+@enduml

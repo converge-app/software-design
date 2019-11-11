@@ -1,0 +1,19 @@
+@startuml
+
+ skinparam monochrome true
+ skinparam classAttributeIconSize 0
+ top to bottom direction
+package "class project.reducers"{
+  
+class "Project" {
+  + createProjectRequest(state, action)
+  + getProjects(state, action)
+  + getProject(state, action)
+  + getOpenProjects(state, action)
+  + getMyProjects(state, action)
+}
+  
+}
+
+
+@enduml

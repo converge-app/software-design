@@ -1,0 +1,15 @@
+@startuml
+
+ skinparam monochrome true
+ skinparam classAttributeIconSize 0
+ top to bottom direction
+package "class alert.reducers"{
+  
+class "Alert" {
+  + alert(state, action)
+} 
+  
+}
+
+
+@enduml
