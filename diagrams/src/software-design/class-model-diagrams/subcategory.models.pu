@@ -14,7 +14,7 @@ package "subcategory.models"{
 
   
 
-class "CategoryContent" {
+class "CategoryContent" <<Component>>{
   + renderSubcategories()
   <<property>>
     + label :string
@@ -23,7 +23,7 @@ class "CategoryContent" {
 hide CategoryContent circle
 
 
-class "CreateProjectSubCategory" {
+class "CreateProjectSubCategory" <<Component>>{
   + getCategory()
   <<property>>
     + label :string

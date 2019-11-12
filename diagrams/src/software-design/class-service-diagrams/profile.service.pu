@@ -1,0 +1,32 @@
+  @startuml
+
+ skinparam monochrome true
+ skinparam classAttributeIconSize 0
+ top to bottom direction
+package "profile.service"{
+  
+interface "IProfile" {
+    + id :string
+    + userId :string
+    + profilePictureUrl :string
+    + rating :number
+    + title :string
+    + description? :string
+    + skills :string[]
+    + experience :string[]
+  }
+  hide IProfile  methods
+  
+class ProfileService{
+  + getByUserId(userId: string) 
+  + update(profile: IProfile)
+  + create(profile: IProfile)
+
+}
+
+  IProfile <|.. ProfileService
+  
+}
+
+
+@enduml

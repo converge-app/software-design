@@ -16,7 +16,7 @@ package "message.models"{
 
   
 
-class "Chat" {
+class "Chat" <<Component>>{
   <<property>>
    + id :string
     + senderId :string
@@ -26,7 +26,7 @@ class "Chat" {
 }
 hide Chat circle
 
-class "MessageInputs" {
+class "MessageInputs" <<Component>>{
   + sendEvent()
   <<property>>
     + id :string
@@ -38,7 +38,7 @@ class "MessageInputs" {
 hide MessageInputs circle
 
   
-class "ReceivingMessage" {
+class "ReceivingMessage" <<Component>>{
   <<property>>
     + id :string
     + senderId :string
@@ -49,7 +49,7 @@ class "ReceivingMessage" {
 hide ReceivingMessage circle
   
   
-class "SentMessage" {
+class "SendMessage" <<Component>>{
   <<property>>
     + id :string
     + senderId :string
@@ -57,7 +57,7 @@ class "SentMessage" {
     + contactId :string
     + timestamp :number
 }
-hide SentMessage circle
+hide SendMessage circle
   
 class "MessageActions" {
   + sendMessage() :IMessage
@@ -84,7 +84,7 @@ class "MessageService" {
   IMessage <|.. MessageInputs 
   IMessage <|.. Chat
    IMessage <|.. ReceivingMessage
-   IMessage <|.. SentMessage
+   IMessage <|.. SendMessage
   IMessage <|.. MessageActions
   IMessage <|.. MessageService
 

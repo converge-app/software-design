@@ -1,0 +1,29 @@
+  @startuml
+
+ skinparam monochrome true
+ skinparam classAttributeIconSize 0
+ top to bottom direction
+package "collaboration.service"{
+  
+  interface "IEvent" {
+  + id :string
+  + projectId :string
+  + ownerId :string
+  + type :string
+  + content :string
+  + timestamp? :number
+  }
+  hide IEvent  methods
+  
+class CollaborationService{
+  + create(event: IEvent)
+  + getByProjectId(projectId: string)
+
+}
+ IEvent <|.. CollaborationService
+  
+  
+}
+
+
+@enduml

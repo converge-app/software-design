@@ -13,7 +13,7 @@ package "category.models"{
   }
   hide ICategory  methods
 
-  class "CreateProjectCategory" {
+  class "CreateProjectCategory" <<Component>>{
 	+ CreateProjectCategory()
   <<property>>
     + label :string

@@ -1,0 +1,29 @@
+  @startuml
+
+ skinparam monochrome true
+ skinparam classAttributeIconSize 0
+ top to bottom direction
+package "message.service"{
+  
+  interface "IMessage" {
+    + id :string
+    + senderId :string
+    + receiverId :string
+    + contactId :string
+    + timestamp :number
+  }
+  hide IMessage  methods
+  
+  
+class MessageService{
+  + post(message: IMessage)
+  + get(contactId: string)
+
+}
+
+  IMessage <|.. MessageService
+  
+}
+
+
+@enduml

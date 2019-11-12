@@ -15,7 +15,7 @@ package "class event.models"{
   }
   hide IEvent  methods
 
-  class "CollaborationContent"{  
+  class "CollaborationContent" <<Component>>{  
   <<property>>
    + id :string
   + projectId :string
@@ -29,7 +29,7 @@ hide CollaborationContent circle
 show CollaborationContent fields
   
   
-class "EventFile" {
+class "EventFile" <<Component>>{
   + getUser() :string
   + useEffect()
   <<property>>
@@ -43,7 +43,7 @@ class "EventFile" {
 
 hide EventFile circle
 
-class "EventMessage" {
+class "EventMessage" <<Component>>{
   + getUser() :string
   + useEffect()
   <<property>>
@@ -57,7 +57,7 @@ class "EventMessage" {
 
 hide EventMessage circle
 
-class "EventType" {
+class "EventType" <<Component>>{
   <<property>>
   + id :string
   + projectId :string
@@ -82,7 +82,7 @@ hide EventType circle
 }
 
   
-class "CollaborationPage" {
+class "CollaborationPage" <<Component>>{
     + send()
     + getByProjectId() :string
   <<property>>

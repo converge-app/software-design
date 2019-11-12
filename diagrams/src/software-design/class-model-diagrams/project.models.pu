@@ -22,7 +22,7 @@ package "project.models"{
 
   
 
-class "FindOpenProjectsContent" {
+class "FindOpenProjectsContent" <<Component>>{
   <<property>>
     + id :string
    + ownerId :string
@@ -38,7 +38,7 @@ class "FindOpenProjectsContent" {
 }
 hide FindOpenProjectsContent circle
 
-class "MyProjectsContent" {
+class "MyProjectsContent" <<Component>>{
   + useEffect()
   <<property>>
    + id :string
@@ -55,7 +55,7 @@ class "MyProjectsContent" {
 }
 hide MyProjectsContent circle
 
-class "OpenProjectContent" {
+class "OpenProjectContent" <<Component>>{
   <<property>>
     + id :string
    + ownerId :string
@@ -91,7 +91,7 @@ class "ProjectActions" {
     ]
 }
 
-class "CollaborationPage" {
+class "CollaborationPage" <<Component>>{
   <<property>>
     + id :string
    + ownerId :string
@@ -108,7 +108,7 @@ class "CollaborationPage" {
 hide CollaborationPage circle
 
   
-class "CreateProjectPage" {
+class "CreateProjectPage" <<Component>>{
   <<property>>
      + id :string
    + ownerId :string
@@ -124,7 +124,7 @@ class "CreateProjectPage" {
 }
 hide CreateProjectPage circle
   
-class "ProjectsPage" {
+class "ProjectsPage" <<Component>>{
   + useEffect()
   <<property>>
       + id :string
@@ -141,7 +141,7 @@ class "ProjectsPage" {
 }
 hide ProjectsPage circle
 
-class "ProjectPage" {
+class "ProjectPage" <<Component>>{
   + useEffect()
   <<property>>
   + id :string
@@ -159,7 +159,7 @@ class "ProjectPage" {
 hide ProjectPage circle  
   
 
-class "OpenProjectsPage" {
+class "OpenProjectsPage" <<Component>>{
   + useEffect()
   <<property>>
      + id :string

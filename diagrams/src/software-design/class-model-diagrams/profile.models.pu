@@ -19,7 +19,7 @@ package "profile.models"{
 
   
 
-class "Contact" {
+class "Contact" <<Component>>{
   + useEffect()
   <<property>>
     + id :string
@@ -33,7 +33,7 @@ class "Contact" {
 }
 hide Contact circle
 
-class "EditProfileContent" {
+class "EditProfileContent" <<Component>>{
   + useEffect()
   + getUser() :string
   + handleFileUpload()
@@ -52,7 +52,7 @@ class "EditProfileContent" {
 }
 hide EditProfileContent circle
 
-class "ProfileAvatar" {
+class "ProfileAvatar" <<Component>>{
   <<property>>
     + id :string
     + userId :string
@@ -65,7 +65,7 @@ class "ProfileAvatar" {
 }
 hide ProfileAvatar circle
 
-class "ProfileRating" {
+class "ProfileRating" <<Component>>{
   <<property>>
     + id :string
     + userId :string
@@ -78,7 +78,7 @@ class "ProfileRating" {
 }
 hide ProfileRating circle
   
-class "ProfileExperience" {
+class "ProfileExperience" <<Component>>{
   <<property>>
     + id :string
     + userId :string
@@ -92,7 +92,7 @@ class "ProfileExperience" {
 hide ProfileExperience circle
 
   
-class "ProfileSkills" {
+class "ProfileSkills" <<Component>>{
   <<property>>
     + id :string
     + userId :string
@@ -105,7 +105,7 @@ class "ProfileSkills" {
 }
 hide ProfileSkills circle
   
-class "ProfileTitle" {
+class "ProfileTitle" <<Component>>{
   <<property>>
     + id :string
     + userId :string
@@ -118,7 +118,7 @@ class "ProfileTitle" {
 }
 hide ProfileTitle circle
   
-class "OpenProjectContent" {
+class "OpenProjectContent" <<Component>>{
   <<property>>
     + id :string
     + userId :string

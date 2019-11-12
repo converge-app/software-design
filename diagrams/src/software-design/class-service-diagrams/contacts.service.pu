@@ -1,0 +1,20 @@
+  @startuml
+
+ skinparam monochrome true
+ skinparam classAttributeIconSize 0
+ top to bottom direction
+package "contacts.service"{
+  
+  
+class ContactsService{
+  + get(userId: string)
+  + addContacts(userId: string)
+
+}
+
+  
+  
+}
+
+
+@enduml

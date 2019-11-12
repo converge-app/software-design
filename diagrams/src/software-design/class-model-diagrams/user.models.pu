@@ -14,16 +14,18 @@ package "user.models"{
   }
   hide IUser  methods
 
-class "Contact" {
+class "Contact" <<Component>>{
   <<property>>
     + id :string
     + firstName :string
     + lastName :string
     + email :string
+   
+
 }
    hide Contact  circle
 
-class "EventFile" {
+class "EventFile" <<Component>>{
   <<property>>
     + id :string
     + firstName :string
@@ -32,7 +34,7 @@ class "EventFile" {
 }
    hide EventFile  circle
   
-class "EventMessage" {
+class "EventMessage" <<Component>>{
   <<property>>
     + id :string
     + firstName :string
@@ -41,7 +43,7 @@ class "EventMessage" {
 }
    hide EventMessage  circle
   
-class "EditProfileContent" {
+class "EditProfileContent" <<Component>>{
   <<property>>
     + id :string
     + firstName :string
@@ -50,7 +52,7 @@ class "EditProfileContent" {
 }
    hide EditProfileContent  circle
   
-class "ProfileRating" {
+class "ProfileRating" <<Component>>{
   <<property>>
     + id :string
     + firstName :string
@@ -59,7 +61,7 @@ class "ProfileRating" {
 }
    hide ProfileRating  circle  
  
-class "profileContent" {
+class "profileContent" <<Component>>{
   <<property>>
     + id :string
     + firstName :string
@@ -68,7 +70,7 @@ class "profileContent" {
 }
    hide profileContent  circle  
   
-class "ProfileName" {
+class "ProfileName" <<Component>>{
   <<property>>
     + id :string
     + firstName :string
@@ -77,7 +79,7 @@ class "ProfileName" {
 }
    hide ProfileName  circle  
 
-class "Bid" {
+class "Bid" <<Component>>{
   <<property>>
     + id :string
     + firstName :string
@@ -86,7 +88,7 @@ class "Bid" {
 }
    hide Bid  circle  
   
-class "ProfileIntro" {
+class "ProfileIntro" <<Component>>{
   <<property>>
     + id :string
     + firstName :string

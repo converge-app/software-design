@@ -16,7 +16,7 @@ package "contact.models"{
   
   
   
-  class "ChatContent" {
+  class "ChatContent" <<Component>>{
   <<property>>
     + id :string
     + senderId :string
@@ -27,7 +27,7 @@ package "contact.models"{
 hide ChatContent circle
 show ChatContent fields
 
-class "Chat" {
+class "Chat" <<Component>>{
   <<property>>
     + id :string
     + senderId :string
@@ -38,7 +38,7 @@ class "Chat" {
 hide Chat circle
 show Chat fields
   
-  class "Contact" {
+  class "Contact" <<Component>>{
   <<property>>
     + id :string
     + senderId :string
