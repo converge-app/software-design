@@ -1,0 +1,98 @@
+\subsection{Service klasser}
+
+I de følgende afsnit vil de forskellige services klasser blive beskrevet.
+
+\begin{figure}[H]
+    \centering
+\includegraphics[width=0.8\textwidth]{diagrams/out/software-design/class-service-diagrams/authentication-service/authentication-service.pdf}
+\caption{Viser Authentication Service}
+\label{fig:authService}
+\end{figure}
+
+På figur \ref{fig:authService} ses Authentication service. Det er en service der gør det muligt at blive registeret som bruger i systemet, og logge ind og modtage et JWT token. Authentication service bruges ved registrering og login, hvilket gør det muligt at bruge JWT token til at tilgå personspecifikke ressourcer i andre services. Derudover skal der bemærkes at den har en relation til Model klassen UserAuthentication
+\newpage
+\begin{figure}[H]
+    \centering
+\includegraphics[width=0.8\textwidth]{diagrams/out/software-design/class-service-diagrams/bidding-service/bidding-service.pdf}
+\caption{Viser Biddings Service}
+\label{fig:biddingservice}
+\end{figure}
+
+På figur \ref{fig:biddingservice} ses klassen for Biddings service, som er en service der indeholder de bud forskellige freelancere har lagt på et givent projekt. Disse bud er transiente og afhænger af projekts service  Når en freelancer er valgt gennem sit bud, vil det ikke længere være muligt at oprette bud til det pågældende projekt.
+
+\newpage
+\begin{figure}[H]
+    \centering
+\includegraphics[width=0.8\textwidth]{diagrams/out/software-design/class-service-diagrams/collaboration-service/collaboration-service.pdf}
+\caption{Viser Collaboration Service}
+\label{fig:collaborationservice}
+\end{figure}
+
+På figur \ref{fig:collaborationservice} ses Collaboration service klassen, som har en relation til Event Model ig derudover kan brugerne ligge hvad som helst ind i servicen ud fra det interface udstedt, der dog skal være JSON. Converge-SPA kan derfor vælge hvilken type begivenheder den vil tillade mellem henholdsvis freelancer og employer. 
+\newpage
+\begin{figure}[H]
+    \centering
+\includegraphics[width=0.8\textwidth]{diagrams/out/software-design/class-service-diagrams/contacts-service/contacts-service.pdf}
+\caption{Viser Contacts Service}
+\label{fig:contactservice}
+\end{figure}
+
+På figur \ref{fig:contactservice} ses Contacts service klassen, der har til formål at indeholde information om det brugerens kontakter og er relativt simpel, det indeholder bare et userID om hvilket bruger det er og Contacts service håndtere to metoder. 
+
+\begin{figure}[H]
+    \centering
+\includegraphics[width=0.8\textwidth]{diagrams/out/software-design/class-service-diagrams/message-service/message-service.pdf}
+\caption{Viser Message Service}
+\label{fig:messageservice}
+\end{figure}
+
+Chat service implementerer en mindre version af en Messenger type chat, hvor to brugere kan skrive frem og tilbage mellem hinanden. Det er netop Message service der håndtere denne funktionalitet som det ses på figur \ref{fig:messageservice}.
+
+\newpage
+\begin{figure}[H]
+    \centering
+\includegraphics[width=0.8\textwidth]{diagrams/out/software-design/class-service-diagrams/payments-service/payments-service.pdf}
+\caption{Viser Payments Service}
+\label{fig:paymentsService}
+\end{figure}
+
+På figur \ref{fig:paymentsService} ses klassen for Payments service. Payment service holder styr på hvilke konti er tilknyttet til tredjeparten Stripe, samt de betalinger tilhørende de forskellige konti.
+
+\newpage
+\begin{figure}[H]
+    \centering
+\includegraphics[width=0.8\textwidth]{diagrams/out/software-design/class-service-diagrams/profile-service/profile-service.pdf}
+\caption{Viser Profile Service}
+\label{fig:profileservice}
+\end{figure}
+
+Ud fra figur \ref{fig:profileservice} ses Profile service klassen, som har en relation til Profile Model.
+Profiles service bruges til at indeholde information om selve profilen, det er alt fra referencer til tidligere erfaringer og jobs, samt en general portfolio.
+
+\begin{figure}[H]
+    \centering
+\includegraphics[width=0.8\textwidth]{diagrams/out/software-design/class-service-diagrams/project-service/project-service.pdf}
+\caption{Viser Project Service}
+\label{fig:projectservice}
+\end{figure}
+
+På figur \ref{fig:projectservice} ses Project service klassen, der har til formål at indeholde information om det gældende projekt og er relativt simpel, det indeholder bare et ID om hvilket projekt det er, samt en employer som udbyder og en freelancer hvis et bud er valgt.
+
+\begin{figure}[H]
+    \centering
+\includegraphics[width=0.8\textwidth]{diagrams/out/software-design/class-service-diagrams/user-service/user-service.pdf}
+\caption{Viser User Service}
+\label{fig:userservice}
+\end{figure}
+
+Users service er en service der binder et ID sammen med noget personlig information om en bruger, f.eks. Et navn, e-mail osv. Derudover har User service en relation til User modellen.
+
+\newpage
+\begin{figure}[H]
+    \centering
+\includegraphics[width=0.8\textwidth]{diagrams/out/software-design/class-service-diagrams/category-service/category-service.pdf}
+\caption{Viser Category Service}
+\label{fig:categoryservice}
+\end{figure}
+
+Ud fra figur \ref{fig:categoryservice} ses at Category service håndtere kategorier i forhold til et oprettet projekt og derudover ses på figur \ref{fig:categoryservice} at det har en relation til Category Model, som er et interface.

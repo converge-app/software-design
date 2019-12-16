@@ -1,0 +1,109 @@
+\section{Klasser}
+Ud fra redux arkitekturen er der udarbejdet en pakkediagram over Converge-SPA forskellige klasser. Disse klasser er med til at håndtere visning af grænsefladen til brugeren, samt håndtering af forespørgsler. Nedenfor ses pakkediagramet over Converge-SPA's klasser.
+
+\begin{figure}[H]
+    \centering
+\includegraphics[width=0.8\textwidth]{diagrams/out/software-design/package-diagram/pkg-converge-classes/pkg-converge-classes.pdf}
+\caption{Viser pakkediagramet over Converge-SPA klasser}
+\label{fig:packagediagram}
+\end{figure}
+
+Som det ses fra figur \ref{fig:packagediagram} er Converge-SPA delt op i syv forskellige klasser, med hver deres formål og funktionalitet. Her skal det bemærkes at den følger Redux arkitekturen, hvor den består af Action, Reducers og Constants (Store) som er beskrevet i ovenstående section. 
+
+Derudover vil de forskellige klasser blive udfoldet og vises i detaljer, hvad klassen indeholder og hvilken andre klasser de har interaktion med.
+
+\subsection{Model klasser}
+
+Det første der vil tages hånd over er Models pakken, hvor det vil blive beskrevet i detaljer og den første Model er bid Model, som ses nedenfor:
+
+\begin{figure}[H]
+    \centering
+\includegraphics[width=0.8\textwidth]{diagrams/out/software-design/class-model-diagrams/bid-models/bid-models.pdf}
+\caption{Viser modellen over bid Models}
+\label{fig:bidmodels}
+\end{figure}
+
+På figur \ref{fig:bidmodels} ses klassen over bid Models, hvor bid bliver sat som et Interface. Bid Model indeholder et id, projectId, freelancerId, en besked og et beløb. Bid model bliver brugt til at håndterer, når en freelancer ønsker og byde på et projekt. Netop derfor ses de klasser og komponenter der benytter indeholdet af bid Model. 
+
+
+\begin{figure}[H]
+    \centering
+\includegraphics[width=0.8\textwidth]{diagrams/out/software-design/class-model-diagrams/category-models/category-models.pdf}
+\caption{Viser modellen over category Model}
+\label{fig:category}
+\end{figure}
+
+På figur \ref{fig:category} ses at modellen over kategorier. Her skal det bemærkes at kategorier er en del af, når en bruger skal oprette projekt. Derfor bliver denne kategori model klassen brugt af CreatProjectCategory og CategoryService.
+
+\begin{figure}[H]
+    \centering
+\includegraphics[width=0.8\textwidth]{diagrams/out/software-design/class-model-diagrams/contact-models/contact-models.pdf}
+\caption{Viser modellen over Chat Model}
+\label{fig:contact}
+\end{figure}
+
+På figur \ref{fig:contact} ses at modellen over Contact og denne model håndterer kommunikationen i chatten. Derfor bliver Contact modellen benyttet af komponenter og klasser der håndtere Chat funktionalitet, når en bruger f.eks. ønsker og sende og modtage beskeder til en anden bruger.
+
+
+\begin{figure}[H]
+    \centering
+\includegraphics[width=0.8\textwidth]{diagrams/out/software-design/class-model-diagrams/event-models/event-models.pdf}
+\caption{Viser Event Model}
+\label{fig:event}
+\end{figure}
+
+Her ses at mange klasser og komponenter der bruger Event modellen, som det ses på figur \ref{fig:event}. Event modellen står for at kunne håndtere de forskellige events der sker, når en Employer og Freelancer starter et samarbejde. Alle de komponenter der benytter Event modellen sørge for at når der sker et event (uploade fil eller sende en besked), så bliver der sat hvornår eventet er sket og af hvem.
+\newpage
+\begin{figure}[H]
+    \centering
+\includegraphics[width=0.8\textwidth]{diagrams/out/software-design/class-model-diagrams/message-models/message-models.pdf}
+\caption{Viser Message Model}
+\label{fig:message}
+\end{figure}
+
+På figur \ref{fig:message} modellen over Message, hvor håndtere selve besked, der bliver sendt af en bruger. Derudover skal der igen bemærkes at det er Chat komponenter og klasser der benytter denne Model.
+
+
+\begin{figure}[H]
+    \centering
+\includegraphics[width=0.8\textwidth]{diagrams/out/software-design/class-model-diagrams/profile-models/profile-models.pdf}
+\caption{Viser Profile Model}
+\label{fig:profile}
+\end{figure}
+
+På figur \ref{fig:profile} ses diagrammet over modellen Profile og hvilken klasser der benytter denne model. Som det ses er der mange klasser og komponenter der benytter modellen og grunden til det er at Profile håndtere information om selve brugeren, kompetencer og udførte arbejde. Derudover håndter Profile også når en bruger skal tilpasse sin personlige profil.
+
+\begin{figure}[H]
+    \centering
+\includegraphics[width=0.8\textwidth]{diagrams/out/software-design/class-model-diagrams/project-models/project-models.pdf}
+\caption{Viser Project Model}
+\label{fig:project}
+\end{figure}
+
+Igen skal der bemærkes ud fra figur \ref{fig:project} at der er mange klasser og komponenter der bruger Project model. Modellen er med til at håndtere alt interaktion der har med projekt og gør såsom: Når der skal oprettes et projekt, brugerens eget projekter, finde et projekt og når Employer og Freelancer skal samarbejde om et projekt.
+
+\begin{figure}[H]
+    \centering
+\includegraphics[width=0.8\textwidth]{diagrams/out/software-design/class-model-diagrams/subcategory-models/subcategory-models.pdf}
+\caption{Ses modellen over Subcategory}
+\label{fig:subcategory}
+\end{figure}
+
+På figur \ref{fig:subcategory} klassen over Subcategory modellen. Denne model skal kunne håndtere når en brugere ønsker et subcategory til et projekt og netop derfor bliver det brugt af komponenter og klassen der har har noget med kategorier at gør.  
+
+\begin{figure}[H]
+    \centering
+\includegraphics[width=0.8\textwidth]{diagrams/out/software-design/class-model-diagrams/user-authentication-models/user-authentication-models.pdf}
+\caption{Viser Authentication Model}
+\label{fig:subcategory}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+\includegraphics[width=0.8\textwidth]{diagrams/out/software-design/class-model-diagrams/user-models/user-models.pdf}
+\caption{Viser pakkediagramet over Converge-SPA klasser}
+\label{fig:user}
+\end{figure}
+
+På figur \ref{fig:user} der håndtere de basale information om en bruger såsom: navn, efternavn og email. Denne model bliver benytter af mange klasser i Converge-SPA, da det er den simpelste model i forhold til bruger information.

@@ -1,0 +1,110 @@
+\subsection{Reducers klasser}
+
+Her vil der være en gennemgang af klasse diagramer over de forskellige Reducers, som Converge-SPA består.
+
+\begin{figure}[H]
+    \centering
+\includegraphics[width=0.65\textwidth]{diagrams/out/software-design/class-reducers-diagrams/alert-reducers/alert-reducers.pdf}
+\caption{Viser Redux arkitekturen}
+\label{fig:redux}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+\includegraphics[width=0.8\textwidth]{diagrams/out/software-design/class-reducers-diagrams/authentication-reducers/authentication-reducers.pdf}
+\caption{Viser Reducer klasse over Authentication}
+\label{fig:authreducer}
+\end{figure}
+På figur \ref{fig:authreducer} ses Reducer for Authentication. Her har Reduceren til formål, når der sker en tilstand ændring i Converge-SPA i forhold til Authentication, så er det authentication.reducers klasse der har til opgave at håndtere handlinger der modtages og sende dem videre til Store, som viser de nye ændringer på grænsefladen. 
+
+
+\begin{figure}[H]
+    \centering
+\includegraphics[width=0.8\textwidth]{diagrams/out/software-design/class-reducers-diagrams/bidding-reducers/bidding-reducers.pdf}
+\caption{Viser Bidding Reducer}
+\label{fig:bidding}
+\end{figure}
+
+På figur \ref{fig:bidding} ses Reducer klassen for bidding. Her skal der bemærkes at den indeholder tre metoder, som skal håndtere tre forskellige tilstande,  når f.eks. en bruger opretter et bud. 
+
+\begin{figure}[H]
+    \centering
+\includegraphics[width=0.8\textwidth]{diagrams/out/software-design/class-reducers-diagrams/collaboration-reducers/collaboration-reducers.pdf}
+\caption{Viser Collaboration Reducer}
+\label{fig:collaboration}
+\end{figure}
+
+Her har Reducer igen til formål at kunne håndtere tilstand ændring specifikt for Collaboration. Reduceren skal i dette tilfælde kunne håndtere tilstand ændring i forhold til getByProjektId, samt når der bliver oprettet et ecreateEvent.
+
+\begin{figure}[H]
+    \centering
+\includegraphics[width=0.8\textwidth]{diagrams/out/software-design/class-reducers-diagrams/contacts-reducers/contacts-reducers.pdf}
+\caption{Viser Contacts Reducer}
+\label{fig:contact}
+\end{figure}
+
+Som det ses ud fra figur \ref{fig:contact}, så skal contact.reducers klasse bearbejde tre forskellige tilstand: Når en bruger tilføjer en anden bruger som kontakt (addContacts), hente alle de nuværende kontakter (getContacts) og skal kunne håndtere tilstands ændring på det nuværende kontakt (setCurrentContact).
+
+\begin{figure}[H]
+    \centering
+\includegraphics[width=0.8\textwidth]{diagrams/out/software-design/class-reducers-diagrams/message-reducers/message-reducers.pdf}
+\caption{Viser klassen for Message Reducer}
+\label{fig:messagereducer}
+\end{figure}
+
+På figur \ref{fig:messagereducer} ses Reducer klassen for Message. Her skal Message Reducer skal kunne håndtere tilstanden, når der modtages og sendes en besked fra en bruger.
+
+\begin{figure}[H]
+    \centering
+\includegraphics[width=0.8\textwidth]{diagrams/out/software-design/class-reducers-diagrams/payment-reducers/payment-reducers.pdf}
+\caption{Viser Payment Reducer}
+\label{fig:paymentreducer}
+\end{figure}
+
+Payment Reducer skal kun holde øje med tilstanden i forhold til om brugerens konto eksistere. Dette kan ses på figur \ref{fig:paymentreducer} at den indeholder kun en metode (accountExists).
+
+\begin{figure}[H]
+    \centering
+\includegraphics[width=0.8\textwidth]{diagrams/out/software-design/class-reducers-diagrams/profile-reducers/profile-reducers.pdf}
+\caption{Viser Reducer klassen for Profile}
+\label{fig:profilereducer}
+\end{figure}
+
+På figur \ref{fig:profilereducer} ses Reducer for Profile. Her har Reduceren til opgave at håndtere tilstand ændring i forhold til Profile, så er det profile.reducers klasse der har til opgave at håndtere handlinger der modtages og sende dem videre til Store, som viser de nye ændringer på grænsefladen. 
+
+\begin{figure}[H]
+    \centering
+\includegraphics[width=0.8\textwidth]{diagrams/out/software-design/class-reducers-diagrams/project-reducers/project-reducers.pdf}
+\caption{Viser Project Reducer}
+\label{fig:projectreducer}
+\end{figure}
+
+Ud fra figur \ref{fig:projectreducer} ses at Reducer klassen for Project, skal kunne bearbejde en række tilstand, når brugeren fortager interaktion i forhold til et givne projekt. 
+
+\begin{figure}[H]
+    \centering
+\includegraphics[width=0.8\textwidth]{diagrams/out/software-design/class-reducers-diagrams/signup-reducers/signup-reducers.pdf}
+\caption{Viser Signup Reducer}
+\label{fig:signup}
+\end{figure}
+
+På figur \ref{fig:signup} ses Reducer klassen for Signup og den har til formål at kunne håndtere tilstand ændringer, når en bruger registerer sig på Converge platformen. Som alle de andre Reducer klasser modtager den en handling og sende dem videre til Store, som viser de nye ændringer for brugeren.
+
+\begin{figure}[H]
+    \centering
+\includegraphics[width=0.8\textwidth]{diagrams/out/software-design/class-reducers-diagrams/submitting-reducers/submitting-reducers.pdf}
+\caption{Viser Submitting Reducer}
+\label{fig:submitting}
+\end{figure}
+
+Submitting Reduceren har til formål, at gør brugeren opmærksom på om der noget der gik galt, i de tilstand ændringer brugeren har fortaget sig. F.eks. hvis brugeren ønsker logge ind i Converge systemet og skriver forkert password, så vil Submitting Reducer vise en besked i bunden om at der var noget der gik galt \ref{fig:submitting}
+ 
+\begin{figure}[H]
+    \centering
+\includegraphics[width=0.8\textwidth]{diagrams/out/software-design/class-reducers-diagrams/users-reducers/users-reducers.pdf}
+\caption{Viser User Reducer}
+\label{fig:userreducer}
+\end{figure}
+
+På figur \ref{fig:userreducer} ses Reducer klassen for User, som skal kunne bearbejde, når der sker en ændring i forhold til en bruger. 

@@ -3,17 +3,32 @@ Her vil der være en gennemgang af de overvejelser og valg der er blevet taget i
 
 \section{Komponent}
 Til at udvikle Converge applikationen, er der blevet benyttet React.  Reacts byggesten er at man kan arbejde med komponenter og det er det der gør React unik. Komponenter tillader udviklere at nedbryde det komplekse brugergrænseflade. På den måde undgår udvikleren at skulle bekymre sig om hele webappen. Derudover giver React mulighed for at repræsentere hierarkiske data i en træstruktur.
+
 Converge applikationen er også repræsenteret i en hierarkisk træstruktur, hvor man f.eks. har alle komponenter i en mappe, som er inddelt i under mapper såsom: content, layout og styles. Content indeholder en under mappe for hver applikationens view, hvor alt view logikken er. Layout indeholder opsætning på tværs af applikationen og kan benyttes af alle. Styles indeholder style af specifikke komponenter som er tilpasset efter eget ønske.  
 Nedenfor ses diagram over workflowet for Converge applikation:
 
-Billede
+\begin{figure}[H]
+    \centering
+\includegraphics[width=0.65\textwidth]{diagrams/out/software-design/front-end-flow/converge-flow/converge-flow.pdf}
+\caption{Viser workflowet over Converge-SPA}
+\label{fig:workflow}
+\end{figure}
 
-Figur (xxx) viser hvordan hele Converge applikationens front-end moduler kommunikerer på. Her ses at komponenter med højere orden React-container såsom: content, layout og styles er ikke synlige for brugeren, men de har de vigtigste komponenter, som brugeren får adgang til. Containerne forsyner brugergrænsefladens komponenter med den tilstand og handlinger, de kan udføre. 
+
+Figur \ref{fig:workflow} viser hvordan hele Converge applikationens front-end moduler kommunikerer på. Her ses at komponenter med højere orden React-container såsom: content, layout og styles er ikke synlige for brugeren, men de har de vigtigste komponenter, som brugeren får adgang til. Containerne forsyner brugergrænsefladens komponenter med den tilstand og handlinger, de kan udføre. 
+
 User interface (UI) komponenter er dog tilgængelige for brugeren, og det f.eks. webgrænsefladelementerne som tekstboks, dropdowns, knapper osv. De modtager parametre, udfører datatilgang ved at lave et kalde til Reguest Module, sende handlinger til redux-store for at opdatere tilstanden, sende data, der skal lagres af Services (gennem Reguest Module). 
 Derudover er det Redux-store der har til opgave at modtage handlinger fra UI React-komponenterne, som er handlinger der indeholder de oplysning, som bliver videregivet til Reducers. Reducererne modtager den aktuelle datatilstand, de ændrede data, og de returnerer den nye tilstand. 
+
 Herudover er der blevet brugt forskellige plugins på Converge applikationen, for at gør udviklingsmiljøet nemmer at håndtere for udviklerne. Som nævnte før er der er blevet brugt redux, som er en del af Flux arkitekturen. Flux arkitektur minder meget om observer-observable pattern, som Redux inspireret af og kan derfor betragtes som en implementering af Flux. Redux er med til at gør det nemt at håndtere applikationens tilstand og administrere at vise data om brugerhandlinger. Nedenfor ses arkitekturen for Redux.
 
-Billede
+\begin{figure}[H]
+    \centering
+\includegraphics[width=0.65\textwidth]{diagrams/out/software-design/redux-architecture/redux-architecture/redux-architecture.pdf}
+\caption{Viser Redux arkitekturen}
+\label{fig:redux}
+\end{figure}
 
-Figur(xx) viser at Redux består af en Store, Reducer, Action og View. Store indeholder state objekter som repræsenterer status for hele Converge applikationen. Hver af disse applikationsbegivenheder (enten fra brugeren eller ekstern) er repræsenteret som en Action, der sendes til en Reducer funktion. Denne reducer opdaterer Store med en ny stat afhængigt af, hvilken handling den modtager. Og når en ny stat skubbes til Store og dette genskabes i View for at vise ændringerne. 
+Figur \ref{fig:redux} viser at Redux arkitektur består af en Store, Reducer, Action og View. Store indeholder state objekter som repræsenterer status for hele Converge applikationen. Hver af disse applikationsbegivenheder (enten fra brugeren eller ekstern) er repræsenteret som en Action, der sendes til en Reducer funktion. Denne reducer opdaterer Store med en ny stat afhængigt af, hvilken handling den modtager. Og når en ny stat skubbes til Store og dette genskabes i View for at vise ændringerne. 
+
 Redux er også med til at afkoble de fleste komponenter, hvilket gør UI-ændringer meget nemme at fortage. Derudover ligger den eneste forretningslogik i Reducer-funktionerne. En reducer er en funktion, der tager en Action og den aktuelle applikations State, og den returnerer et nyt State objekt, derfor er det ligetil at teste, fordi vi kan skrive en unit test, der indstiller en State og kontrollerer, at Reduceren returnerer den nye og ændret State.
